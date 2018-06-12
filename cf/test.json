@@ -1,0 +1,22 @@
+{
+    "tests": [
+        {
+            "input": {
+                "body": {
+                  "name": "Mario",
+                  "surname": "Rossi",
+                  "gender": "M",
+                  "day": "01",
+                  "month": "01",
+                  "year": "1970",
+                  "town": "ROMA"
+                }
+            },
+            "output": {
+                "body": {
+                    "message": "RSSMRA70A01H501S"
+                }
+            }
+        }
+    ]
+}

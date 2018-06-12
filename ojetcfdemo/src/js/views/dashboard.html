@@ -1,0 +1,42 @@
+<!--
+ Copyright (c) 2014, 2018, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<div class="oj-hybrid-padding">
+  <h1>Calcola il tuo codice fiscale</h1>
+
+  <div class="oj-flex-items-pad">
+    <div class="oj-flex">
+      <div class="oj-flex-item">
+        Riempi la form e premi il pulsante Calcola!
+        <br/><br/>
+        <oj-form-layout id="form-container">
+          <oj-input-text id="name" required label-hint="Nome" value="{{name}}"></oj-input-text>
+          <oj-input-text id="surname" required label-hint="Cognome" value="{{surname}}"></oj-input-text>
+          <!--
+          <oj-input-text id="gender" required label-hint="Genere" value="{{gender}}"></oj-input-text>
+          -->
+          <oj-label id="gender" required>Genere</oj-label>
+          <oj-radioset id="gender" labelled-by="gender" required value="{{gender}}" >
+            <oj-option id="male" value="M">Maschio</oj-option>
+            <oj-option id="female" value="F">Femmina</oj-option>
+          </oj-radioset>
+          <oj-input-date id="birthdate" required label-hint="Data di nascita" value='{{birthdate}}'></oj-input-date>
+          <!--
+          <oj-input-text id="day" required label-hint="Giorno" value="{{day}}"></oj-input-text>
+          <oj-input-text id="month" required label-hint="Mese" value="{{month}}"></oj-input-text>
+          <oj-input-text id="year" required label-hint="Anno" value="{{year}}"></oj-input-text>
+          -->
+          <oj-input-text id="town" required label-hint="Citt&agrave" value="{{town}}"></oj-input-text>
+        </oj-form-layout>
+        <oj-button id='calculate' on-oj-action='[[buttonClick]]'>Calcola!</oj-button>
+      </div>
+      <div class="oj-flex-item">
+        <span class="oj-label">Il tuo codice fiscale &egrave;:</span>
+        <oj-progress id="progressCircle" type="circle" value="{{progressValue}}" data-bind="visible: dataLoaded"></oj-progress>
+        <span data-bind="text: cf"></span>
+      </div>
+    </div>
+  </div>
+
+</div>
