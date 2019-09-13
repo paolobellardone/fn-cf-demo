@@ -16,6 +16,5 @@
       "themes": "themes"
     }
   },
-  
-  "defaultBrowser": "chrome" 
+  "defaultBrowser": "chrome"
 }

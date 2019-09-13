@@ -1,16 +1,9 @@
-/**
- * @license
- * Copyright (c) 2014, 2018, Oracle and/or its affiliates.
- * The Universal Permissive License (UPL), Version 1.0
- */
-/*
- * Your dashboard ViewModel code goes here
- */
-define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojlabel', 'ojs/ojprogress',
-        'ojs/ojinputtext', 'ojs/ojformlayout', 'ojs/ojdatetimepicker', 'ojs/ojradioset', 'promise'],
+define(['ojs/ojcore', 'knockout', 'jquery',
+        'ojs/ojknockout', 'ojs/ojlabel', 'ojs/ojprogress', 'ojs/ojinputtext',
+        'ojs/ojformlayout', 'ojs/ojdatetimepicker', 'ojs/ojradioset', 'promise'],
  function(oj, ko, $) {
 
-    function DashboardViewModel() {
+    function HomeViewModel() {
       var self = this;
 
       // Input
@@ -105,6 +98,6 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojlabel', 'oj
      * each time the view is displayed.  Return an instance of the ViewModel if
      * only one instance of the ViewModel is needed.
      */
-    return new DashboardViewModel();
+    return new HomeViewModel();
   }
 );
