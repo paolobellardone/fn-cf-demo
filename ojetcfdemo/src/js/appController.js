@@ -1,6 +1,6 @@
 define(['ojs/ojcore', 'knockout', 'ojs/ojmodule-element-utils',
         'ojs/ojmodule-element', 'ojs/ojrouter', 'ojs/ojknockout',
-        'ojs/ojarraytabledatasource'],
+        'ojs/ojarraydataprovider'],
   function(oj, ko, moduleUtils) {
      function ControllerViewModel() {
        var self = this;
@@ -41,7 +41,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojmodule-element-utils',
       {name: 'About', id: 'about',
        iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-info-icon-24'}
       ];
-      self.navDataSource = new oj.ArrayTableDataSource(navData, {idAttribute: 'id'});
+      self.navDataSource = new oj.ArrayDataProvider(navData, {idAttribute: 'id'});
 
       // Header
       // Application Name used in Branding Area
