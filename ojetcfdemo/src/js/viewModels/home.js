@@ -1,6 +1,6 @@
 define(['ojs/ojcore', 'knockout', 'jquery',
         'ojs/ojknockout', 'ojs/ojlabel', 'ojs/ojprogress', 'ojs/ojinputtext',
-        'ojs/ojformlayout', 'ojs/ojdatetimepicker', 'ojs/ojradioset', 'promise'],
+        'ojs/ojformlayout', 'ojs/ojdatetimepicker', 'ojs/ojradioset'],
  function(oj, ko, $) {
 
     function HomeViewModel() {
@@ -33,7 +33,6 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 
       self.buttonClick = function(event) {
                           self.dataLoaded(true);
-                          alert();
                           var parsedDate = self.birthdate().split("-");
                           self.year(parsedDate[0]);
                           self.month(parsedDate[1]);
@@ -50,10 +49,10 @@ define(['ojs/ojcore', 'knockout', 'jquery',
                           };
 
                           $.ajax({
-                            url: "http://localhost:8080/r/codicefiscale/cf",
+                            url: "http://localhost:8080/t/cfapp/cf",
                             method: 'POST',
+                            crossDomain: true,
                             data: JSON.stringify(payload),
-                            contentType: 'application/json',
                             success: function(data) {
                                           self.dataLoaded(false);
                                           self.cf(data.message);

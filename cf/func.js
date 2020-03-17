@@ -87,7 +87,6 @@ CodiceFiscale.find_town=function(pattern_town) {
   var tax_code, town, ret = []
   var str = ""
   var quoted = pattern_town.replace(/([\\\.\+\*\?\[\^\]\$\(\)\{\}\=\!\<\>\|\:])/g, "\\$1")
-  //var re=new RegExp(quoted,'i')
   var re = new RegExp("\\b" + quoted + "\\b", "gi")
 
   for (tax_code in this.town_codes) {
@@ -119,15 +118,8 @@ CodiceFiscale.eval_tax_code = function(name, surname, gender, day, month, year, 
   return tax_code
 }
 
-// Invoke with the following command, see the payload samples below:
-// curl -H "Content-Type: application/json" -X POST -d "{\"nome\": \"Paolo\", ...}" http://localhost:8080/cf
-
-
-fdk.handle(function(input) {
-  //return input
+fdk.handle(function(input, ctx) {
   if (input.name) {
-    //console.log(JSON.stringify(input))
-    //return input.name
     var codice = CodiceFiscale.eval_tax_code(
                   input.name,
                   input.surname,
@@ -136,8 +128,8 @@ fdk.handle(function(input) {
                   input.month,
                   input.year,
                   input.town)
-    //console.log("************** RESULT ************ :" + codice);
-    //return codice
+    let hctx = ctx.httpGateway
+    hctx.setResponseHeader('Access-Control-Allow-Origin', '*')
     response = {'message': codice}
     return response
   }

@@ -11,8 +11,8 @@ Quickstart:
   * Create a new app to deploy functions into it
 3. fn deploy --app cfapp --local
   * Deploy the new app into the fn server
-4. fn inspect function cfapp cf
-  * Get the URL to invoke the function
+4. Test the function
+  * curl -X "POST" -H "Content-Type: application/json" --data @sample.payload.json http://localhost:8080/t/cfapp/cf
 
 
 ### ojetcfdemo
