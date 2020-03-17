@@ -18,8 +18,6 @@ Quickstart:
 ### ojetcfdemo
 This directory contains a Oracle Jet application that invokes the previous function.
 
-Please update the url parameter in file main.js @ line 53 to reflect the new invoke URL got in the prvious step.
-
 The application can be run standalone using the command: *ojet serve* or can be deployed in a Docker container using the included Dockerfile.
 
 If yoou want to create a Docker image, please run *npm install* before creating the image.
