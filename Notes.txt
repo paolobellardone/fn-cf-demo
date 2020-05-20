@@ -1,0 +1,1 @@
+modificare la procedura per la ricerca del codice catastale come quello di cf standalone e caricare su github
