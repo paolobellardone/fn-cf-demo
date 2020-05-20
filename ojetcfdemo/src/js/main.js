@@ -2,7 +2,7 @@
 
  // The UserAgent is used to detect IE11. Only IE11 requires ES5.
 (function () {
-  
+
   function _ojIsIE11() {
     var nAgt = navigator.userAgent;
     return nAgt.indexOf('MSIE') !== -1 || !!nAgt.match(/Trident.*rv:11./);
@@ -18,13 +18,13 @@
       // injector:mainReleasePaths
       {
         'knockout': 'libs/knockout/knockout-3.5.0.debug',
-        'jquery': 'libs/jquery/jquery-3.4.1',
+        'jquery': 'libs/jquery/jquery-3.5.1',
         'jqueryui-amd': 'libs/jquery/jqueryui-amd-1.12.1',
         'hammerjs': 'libs/hammer/hammer-2.0.8',
         'ojdnd': 'libs/dnd-polyfill/dnd-polyfill-1.0.1',
-        'ojs': 'libs/oj/v8.1.0/debug' + (_ojNeedsES5 ? '_es5' : ''),
-        'ojL10n': 'libs/oj/v8.1.0/ojL10n',
-        'ojtranslations': 'libs/oj/v8.1.0/resources',
+        'ojs': 'libs/oj/v8.3.0/debug' + (_ojNeedsES5 ? '_es5' : ''),
+        'ojL10n': 'libs/oj/v8.3.0/ojL10n',
+        'ojtranslations': 'libs/oj/v8.3.0/resources',
         'text': 'libs/require/text',
         'signals': 'libs/js-signals/signals',
         'customElements': 'libs/webcomponents/custom-elements.min',

@@ -12,9 +12,9 @@
     "staging": {
       "web": "web",
       "hybrid": "hybrid",
-      "themes": "themes"
+      "themes": "staged-themes"
     }
   },
   "defaultBrowser": "chrome",
-  "generatorVersion": "8.2.0"
+  "generatorVersion": "8.3.0"
 }

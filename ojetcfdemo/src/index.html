@@ -10,7 +10,7 @@
 
     <!-- This is the main css file for the default Alta theme -->
     <!-- injector:theme -->
-    <link rel="stylesheet" href="css/libs/oj/v8.1.0/alta/oj-alta-min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/libs/oj/v8.3.0/alta/oj-alta-min.css" type="text/css"/>
     <!-- endinjector -->
 
     <!-- This contains icon fonts used by the starter template -->
@@ -48,7 +48,7 @@
           <div class="oj-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
             <!-- Offcanvas toggle button -->
             <div class="oj-flex-bar-start oj-md-hide">
-              <oj-button id="drawerToggleButton" class="oj-button-lg" on-oj-action="[[toggleDrawer]]" chroming="half" display="icons">
+              <oj-button id="drawerToggleButton" class="oj-button-lg" on-oj-action="[[toggleDrawer]]" chroming="solid" display="icons">
                 <span slot="startIcon" class="oj-web-applayout-offcanvas-icon"></span>
                 <span>Application Navigation</span>
               </oj-button>
@@ -60,7 +60,7 @@
             <div class="oj-flex-bar-end">
               <!-- Responsive Toolbar -->
               <oj-toolbar>
-                <oj-menu-button id="userMenu" display="[[smScreen() ? 'icons' : 'all']]" chroming="half">
+                <oj-menu-button id="userMenu" display="[[smScreen() ? 'icons' : 'all']]" chroming="solid">
                   <span><oj-bind-text value="[[userLogin]]"></oj-bind-text></span>
                   <span slot="endIcon" :class="[[{'oj-icon demo-appheader-avatar': smScreen(), 'oj-component-icon oj-button-menu-dropdown-icon': !smScreen()}]]"></span>
                   <oj-menu id="menu1" slot="menu" style="display:none">
@@ -100,7 +100,7 @@
         </footer>
       </div>
     </div>
-    
+
     <script type="text/javascript" src="js/libs/require/require.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 

@@ -9,7 +9,7 @@
         <oj-form-layout id="form-container">
           <oj-input-text id="name" required label-hint="Nome" value="{{name}}"></oj-input-text>
           <oj-input-text id="surname" required label-hint="Cognome" value="{{surname}}"></oj-input-text>
-          <oj-label id="gender" required>Genere</oj-label>
+          <oj-label id="gender" show-required="true">Genere</oj-label>
           <oj-radioset id="gender" labelled-by="gender" required value="{{gender}}" >
             <oj-option id="male" value="M">Maschio</oj-option>
             <oj-option id="female" value="F">Femmina</oj-option>
@@ -20,9 +20,9 @@
         <oj-button id='calculate' on-oj-action='[[buttonClick]]'>Calcola!</oj-button>
       </div>
       <div class="oj-flex-item">
-        <span class="oj-label">Il tuo codice fiscale &egrave;:</span>
+        <h3 class="oj-label">Il tuo codice fiscale &egrave;:</h3>
         <oj-progress id="progressCircle" type="circle" value="{{progressValue}}" data-bind="visible: dataLoaded"></oj-progress>
-        <span data-bind="text: cf"></span>
+        <h2><oj-bind-text value="[[cf]]"></oj-bind-text></h2>
       </div>
     </div>
   </div>
