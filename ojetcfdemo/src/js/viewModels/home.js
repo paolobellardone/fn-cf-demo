@@ -1,10 +1,12 @@
-define(['ojs/ojcore', 'knockout', 'jquery',
+define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojarraydataprovider', 'text!comuni.json',
         'ojs/ojknockout', 'ojs/ojlabel', 'ojs/ojprogress', 'ojs/ojinputtext',
-        'ojs/ojformlayout', 'ojs/ojdatetimepicker', 'ojs/ojradioset'],
- function(oj, ko, $) {
+        'ojs/ojformlayout', 'ojs/ojdatetimepicker', 'ojs/ojradioset', 'ojs/ojinputsearch'],
+ function(oj, ko, $, ArrayDataProvider, towns) {
 
     function HomeViewModel() {
       var self = this;
+
+      self.suggestionsDP = new ArrayDataProvider(JSON.parse(towns), { keyAttributes: 'nome', textFilterAttributes: ['nome'] });
 
       // Input
       self.name = ko.observable("");

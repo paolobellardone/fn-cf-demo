@@ -1,7 +1,8 @@
 /node_modules
 /bower_components
 /web
-/themes
+/staged-themes
+/jaftmp@
 
 /hybrid/node_modules
 /hybrid/platforms

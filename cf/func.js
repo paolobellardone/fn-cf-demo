@@ -2,9 +2,9 @@ var fdk = require('@fnproject/fdk');
 
 var CodiceFiscale = {}
 
-// WARINING: Does not manage "omocodie" - same generated codes for persons with same name, town, birth date, gender
+// WARNING: Does not manage "omocodie" - same generated codes for persons with same name, town, birth date, gender
 
-CodiceFiscale.town_codes = require('./comuni.json') // Load town codes from file comuni.json - update as required
+CodiceFiscale.towns = require('./comuni.json') // Load town codes from file comuni.json - update as required
 
 CodiceFiscale.months = ['A', 'B', 'C', 'D', 'E', 'H', 'L', 'M', 'P', 'R', 'S', 'T']
 
@@ -45,6 +45,12 @@ CodiceFiscale.get_vowels = function(str) {
   return str.replace(/[^AEIOU]/gi, '')
 }
 
+CodiceFiscale.capitalize_string = function (string) {
+  return string.replace(/\w\S*/g, function (txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
+}
+
 CodiceFiscale.eval_surname_code = function(surname) {
   var surname_code = this.get_consonants(surname)
   surname_code += this.get_vowels(surname)
@@ -83,29 +89,13 @@ CodiceFiscale.eval_date_code = function(dd, mm, yy, gender) {
   return "" + year + month + day
 }
 
-CodiceFiscale.find_town=function(pattern_town) {
-  var tax_code, town, ret = []
-  var str = ""
-  var quoted = pattern_town.replace(/([\\\.\+\*\?\[\^\]\$\(\)\{\}\=\!\<\>\|\:])/g, "\\$1")
-  var re = new RegExp("\\b" + quoted + "\\b", "gi")
-
-  for (tax_code in this.town_codes) {
-    town = this.town_codes[tax_code]
-    if (town.match(re))
-      ret.push([town,tax_code])
-  }
-
-  for (i = 0; i < ret.length; i++) {
-    str = ret[i][0].slice(0, ret[i][0].indexOf(' ('))
-    if (str === quoted)
-      return ret[i]
-  }
+CodiceFiscale.find_town = function (town) {
+  var picked = this.towns.find(o => o.nome === town);
+  return picked.codiceCatastale;
 }
 
-CodiceFiscale.eval_town_code = function(pattern_town) {
-  if(pattern_town.match(/^[A-Z]\d\d\d$/ig))
-    return this.find_town(pattern_town)[1]
-  return this.find_town(pattern_town)[1]
+CodiceFiscale.eval_town_code = function (town) {
+  return this.find_town(this.capitalize_string(town));
 }
 
 CodiceFiscale.eval_tax_code = function(name, surname, gender, day, month, year, town) {

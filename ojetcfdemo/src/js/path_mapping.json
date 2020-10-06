@@ -4,10 +4,11 @@
 
   "cdns": {
     "jet": {
-      "prefix": "https://static.oracle.com/cdn/jet/v8.3.0/default/js",
+      "prefix": "https://static.oracle.com/cdn/jet/9.1.0/default/js",
+      "css": "https://static.oracle.com/cdn/jet/9.1.0/default/css",
       "config": "bundles-config.js"
     },
-    "3rdparty": "https://static.oracle.com/cdn/jet/v8.3.0/3rdparty"
+    "3rdparty": "https://static.oracle.com/cdn/jet/9.1.0/3rdparty"
   },
 
   "libs": {
@@ -18,12 +19,12 @@
       "debug": {
         "src": "knockout-latest.debug.js",
         "path": "libs/knockout/knockout-#{version}.debug.js",
-        "cdnPath": "knockout/knockout-3.5.0.debug"
+        "cdnPath": "knockout/knockout-3.5.1.debug"
       },
       "release": {
         "src": "knockout-latest.js",
         "path": "libs/knockout/knockout-#{version}.js",
-        "cdnPath": "knockout/knockout-3.5.0"
+        "cdnPath": "knockout/knockout-3.5.1"
       }
     },
 
@@ -91,14 +92,14 @@
       "cdn": "3rdparty",
       "cwd": "node_modules/@oracle/oraclejet/dist/js/libs/dnd-polyfill",
       "debug": {
-        "src": "dnd-polyfill-1.0.1.js",
-        "path": "libs/dnd-polyfill/dnd-polyfill-1.0.1.js",
-        "cdnPath": "dnd-polyfill/dnd-polyfill-1.0.1"
+        "src": "dnd-polyfill-1.0.2.js",
+        "path": "libs/dnd-polyfill/dnd-polyfill-1.0.2.js",
+        "cdnPath": "dnd-polyfill/dnd-polyfill-1.0.2"
       },
       "release": {
-        "src": "dnd-polyfill-1.0.1.min.js",
-        "path": "libs/dnd-polyfill/dnd-polyfill-1.0.1.min.js",
-        "cdnPath": "dnd-polyfill/dnd-polyfill-1.0.1.min"
+        "src": "dnd-polyfill-1.0.2.min.js",
+        "path": "libs/dnd-polyfill/dnd-polyfill-1.0.2.min.js",
+        "cdnPath": "dnd-polyfill/dnd-polyfill-1.0.2.min"
       }
     },
 

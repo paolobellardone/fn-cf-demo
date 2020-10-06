@@ -1,7 +1,16 @@
 oj-module:not(.oj-complete) {
-  visibility: hidden; 
+  visibility: hidden;
 }
 
 oj-module {
-  display: block; 
+  display: block;
+}
+
+.sendOffScreen {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }

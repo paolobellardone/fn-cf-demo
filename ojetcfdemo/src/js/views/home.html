@@ -15,7 +15,8 @@
             <oj-option id="female" value="F">Femmina</oj-option>
           </oj-radioset>
           <oj-input-date id="birthdate" required label-hint="Data di nascita" value='{{birthdate}}'></oj-input-date>
-          <oj-input-text id="town" required label-hint="Citt&agrave" value="{{town}}"></oj-input-text>
+          <oj-label for="search1">Citt&agrave (iniziare a digitare per filtrare)</oj-label>
+          <oj-input-search id="search1" suggestions="{{suggestionsDP}}" value="{{town}}" suggestion-item-text="nome" style="max-width: 20em"></oj-input-search>
         </oj-form-layout>
         <oj-button id='calculate' on-oj-action='[[buttonClick]]'>Calcola!</oj-button>
       </div>
