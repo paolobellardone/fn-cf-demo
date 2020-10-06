@@ -16,8 +16,8 @@
     }
   },
   "defaultBrowser": "chrome",
-	"sassVer": "4.13.0",
-	"defaultTheme": "redwood",
-	"defaultCssvars": "disabled",
-	"generatorVersion": "9.1.0"
+  "sassVer": "4.13.0",
+  "defaultTheme": "redwood",
+  "defaultCssvars": "disabled",
+  "generatorVersion": "9.1.0"
 }
