@@ -21,8 +21,8 @@
    "components": [],
    "builtinJetRules": true,
    "builtinExchRules": true,
-   "jetVer": "8.3",
-   "theme": "alta",
+   "jetVer": "9.2",
+   "theme": "redwood",
    "format": "prose",
    "severity": "all",
    "groups": [
@@ -40,6 +40,6 @@
    ],
    "ojet": {
       "update": true,
-      "md5": "b12f6d7e792e3e55f2c728e6d80f0c11"
+      "md5": "3c47af9883311115e96d067ce60acc19"
    }
 }
