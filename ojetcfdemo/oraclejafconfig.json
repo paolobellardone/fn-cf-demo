@@ -16,13 +16,14 @@
       "./src/js/jet-composites/**/extension/**/*.*",
       "./src/js/jet-composites/**/resources/**/*.*",
       "./src/**/*-min.js",
-      "./src/**/*-min.css"
+      "./src/**/*-min.css",
+      "./**/node_modules/**/*.*"
    ],
    "components": [],
    "builtinJetRules": true,
    "builtinExchRules": true,
-   "jetVer": "9.2",
-   "theme": "redwood",
+   "jetVer": "10.1",
+   "theme": "Redwood",
    "format": "prose",
    "severity": "all",
    "groups": [
@@ -40,6 +41,6 @@
    ],
    "ojet": {
       "update": true,
-      "md5": "3c47af9883311115e96d067ce60acc19"
+      "md5": "ac7e8f46d6f3d790c33d460259294a97"
    }
 }
