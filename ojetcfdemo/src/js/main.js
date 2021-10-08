@@ -1,6 +1,5 @@
 'use strict';
 
- // The UserAgent is used to detect IE11. Only IE11 requires ES5.
 (function () {
 
   requirejs.config(

@@ -4,11 +4,11 @@
 
   "cdns": {
     "jet": {
-      "prefix": "https://static.oracle.com/cdn/jet/11.0.0/default/js",
-      "css": "https://static.oracle.com/cdn/jet/11.0.0/default/css",
+      "prefix": "https://static.oracle.com/cdn/jet/11.1.0/default/js",
+      "css": "https://static.oracle.com/cdn/jet/11.1.0/default/css",
       "config": "bundles-config.js"
     },
-    "3rdparty": "https://static.oracle.com/cdn/jet/11.0.0/3rdparty"
+    "3rdparty": "https://static.oracle.com/cdn/jet/11.1.0/3rdparty"
   },
 
   "libs": {
@@ -288,6 +288,23 @@
     },
 
     "ojcss": {
+      "cdn": "jet",
+      "cwd": "node_modules/@oracle/oraclejet/dist/js/libs/oj",
+      "debug": {
+        "src": ["debug/ojcss.js"],
+        "path": "libs/oj/v#{version}",
+        "pathSuffix": "/debug/ojcss'",
+        "cdnPath": "ojcss"
+      },
+      "release": {
+        "src": ["min/ojcss.js"],
+        "path": "libs/oj/v#{version}",
+        "pathSuffix": "/min/ojcss'",
+        "cdnPath": "ojcss"
+      }
+    },
+
+    "ojs/ojcss": {
       "cdn": "jet",
       "cwd": "node_modules/@oracle/oraclejet/dist/js/libs/oj",
       "debug": {

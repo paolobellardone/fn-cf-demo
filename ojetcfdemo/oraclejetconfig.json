@@ -6,8 +6,7 @@
       "hybrid": "src-hybrid",
       "javascript": "js",
       "styles": "css",
-      "themes": "themes",
-      "tests": "tests"
+      "themes": "themes"
     },
     "staging": {
       "web": "web",
@@ -19,5 +18,5 @@
   "sassVer": "5.0.0",
   "defaultTheme": "redwood",
   "architecture": "mvvm",
-  "generatorVersion": "11.0.0"
+  "generatorVersion": "11.1.0"
 }
