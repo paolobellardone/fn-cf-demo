@@ -1,3 +1,12 @@
+/**
+ * @license
+ * Copyright (c) 2014, 2020, Oracle and/or its affiliates.
+ * The Universal Permissive License (UPL), Version 1.0
+ * @ignore
+ */
+/*
+ * Your application specific code will go here
+ */
 define(['knockout', 'ojs/ojmodule-element-utils', 'ojs/ojknockouttemplateutils', 'ojs/ojrouter', 'ojs/ojresponsiveutils', 'ojs/ojresponsiveknockoututils', 'ojs/ojarraydataprovider',
         'ojs/ojoffcanvas', 'ojs/ojmodule-element', 'ojs/ojknockout'],
   function(ko, moduleUtils, KnockoutTemplateUtils, Router, ResponsiveUtils, ResponsiveKnockoutUtils, ArrayDataProvider, OffcanvasUtils) {
@@ -62,40 +71,6 @@ define(['knockout', 'ojs/ojmodule-element-utils', 'ojs/ojknockouttemplateutils',
        iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-info-icon-24'}
       ];
       self.navDataProvider = new ArrayDataProvider(navData, {keyAttributes: 'id'});
-
-      // Drawer
-      // Close offcanvas on medium and larger screens
-      self.mdScreen.subscribe(function() {OffcanvasUtils.close(self.drawerParams);});
-      self.drawerParams = {
-        displayMode: 'push',
-        selector: '#navDrawer',
-        content: '#pageContent'
-      };
-      // Called by navigation drawer toggle button and after selection of nav drawer item
-      self.toggleDrawer = function() {
-        self.navDrawerOn = true;
-        return OffcanvasUtils.toggle(self.drawerParams);
-      }
-      // Add a close listener so we can move focus back to the toggle button when the drawer closes
-      document.getElementById('navDrawer').addEventListener("ojclose", onNavDrawerClose);
-
-      /*
-        - If there is no aria-live announcement, bring focus to the nav-drawer button immediately.
-        - If there is any aria-live announcement in progress, add timeout to bring focus to the nav-drawer button.
-        - When the nav-drawer is ON and annoucement happens, then after nav-drawer closes reset 'waitForAnnouncement' property to false.
-      */
-      function onNavDrawerClose(event) {
-        self.navDrawerOn = false;
-        if(!self.waitForAnnouncement) {
-          document.getElementById('drawerToggleButton').focus();
-          return;
-        }
-
-        setTimeout(function() {
-          document.getElementById('drawerToggleButton').focus();
-          self.waitForAnnouncement = false;
-        }, 2500);
-      }
 
       // Header
       // Application Name used in Branding Area

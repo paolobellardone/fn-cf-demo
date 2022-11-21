@@ -1,0 +1,43 @@
+// JAF Generated OJET Based Configuration
+// Updated: Mon Nov 21 2022 15:05:01 GMT+0100 (Central European Standard Time)
+
+{
+   "base": "$jafcwd",
+   "files": [
+      "./src/**/*.html",
+      "./src/**/*.js",
+      "./src/**/component.json",
+      "./src/css/**/*.css"
+   ],
+   "exclude": [
+      "./src/**/*-min.js",
+      "./src/**/*-min.css",
+      "./**/node_modules/**/*.*"
+   ],
+   "components": [
+      "./jet_components/**/component.json"
+   ],
+   "builtinJetRules": true,
+   "jetVer": "13.1",
+   "ecmaVer": 11,
+   "theme": "Redwood",
+   "format": "prose",
+   "severity": "all",
+   "groups": [
+      "all"
+   ],
+   "options": {
+      "verbose": false,
+      "color": true
+   },
+   "title": [
+      "+---------------------------------------------------------------------+",
+      "|                         OJET Application Audit                      |",
+      "+---------------------------------------------------------------------+",
+      "JAF $jafver - Jet $jetver :  ($jafdate, $jaftime)\n"
+   ],
+   "ojet": {
+      "update": true,
+      "md5": "c847c3db0fd0dc9d4ef46be88d8ad072"
+   }
+}

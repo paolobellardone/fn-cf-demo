@@ -1,12 +1,17 @@
-define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojarraydataprovider', 'text!comuni.json',
-        'ojs/ojknockout', 'ojs/ojlabel', 'ojs/ojprogress', 'ojs/ojinputtext',
-        'ojs/ojformlayout', 'ojs/ojdatetimepicker', 'ojs/ojradioset', 'ojs/ojinputsearch'],
- function(oj, ko, $, ArrayDataProvider, towns) {
+/**
+ * @license
+ * Copyright (c) 2014, 2018, Oracle and/or its affiliates.
+ * The Universal Permissive License (UPL), Version 1.0
+ */
+/*
+ * Your dashboard ViewModel code goes here
+ */
+define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojlabel', 'ojs/ojprogress',
+        'ojs/ojinputtext', 'ojs/ojformlayout', 'ojs/ojdatetimepicker', 'ojs/ojradioset'],
+ function(oj, ko, $) {
 
-    function HomeViewModel() {
+    function DashboardViewModel() {
       var self = this;
-
-      self.suggestionsDP = new ArrayDataProvider(JSON.parse(towns), { keyAttributes: 'nome', textFilterAttributes: ['nome'] });
 
       // Input
       self.name = ko.observable("");
@@ -35,6 +40,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojarraydataprovider', 'text!com
 
       self.buttonClick = function(event) {
                           self.dataLoaded(true);
+                          //alert();
                           var parsedDate = self.birthdate().split("-");
                           self.year(parsedDate[0]);
                           self.month(parsedDate[1]);
@@ -50,11 +56,10 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojarraydataprovider', 'text!com
                             town: self.town().toUpperCase()
                           };
 
-                          $.ajax({
-                            url: "http://localhost:8080/t/cfapp/cf",
-                            method: 'POST',
-                            crossDomain: true,
+                           $.post({
+                            url: "http://localhost:9000/cf",
                             data: JSON.stringify(payload),
+                            contentType: 'application/json',
                             success: function(data) {
                                           self.dataLoaded(false);
                                           self.cf(data.message);
@@ -99,6 +104,6 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojarraydataprovider', 'text!com
      * each time the view is displayed.  Return an instance of the ViewModel if
      * only one instance of the ViewModel is needed.
      */
-    return new HomeViewModel();
+    return new DashboardViewModel();
   }
 );

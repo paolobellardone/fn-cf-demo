@@ -1,7 +1,17 @@
+/**
+ * @license
+ * Copyright (c) 2014, 2020, Oracle and/or its affiliates.
+ * The Universal Permissive License (UPL), Version 1.0
+ * @ignore
+ */
 'use strict';
 
-(function () {
+/**
+ * Example of Require.js boostrap javascript
+ */
 
+(function () {
+  
   requirejs.config(
     {
       baseUrl: 'js',
@@ -10,14 +20,14 @@
       paths:
       // injector:mainReleasePaths
       {
-        'knockout': 'libs/knockout/knockout-3.5.1.debug',
-        'jquery': 'libs/jquery/jquery-3.5.1',
+        'knockout': 'libs/knockout/knockout-3.5.0.debug',
+        'jquery': 'libs/jquery/jquery-3.4.1',
         'jqueryui-amd': 'libs/jquery/jqueryui-amd-1.12.1',
         'hammerjs': 'libs/hammer/hammer-2.0.8',
-        'ojdnd': 'libs/dnd-polyfill/dnd-polyfill-1.0.2',
-        'ojs': 'libs/oj/v9.1.0/debug' + (_ojNeedsES5 ? '_es5' : ''),
-        'ojL10n': 'libs/oj/v9.1.0/ojL10n',
-        'ojtranslations': 'libs/oj/v9.1.0/resources',
+        'ojdnd': 'libs/dnd-polyfill/dnd-polyfill-1.0.1',
+        'ojs': 'libs/oj/v8.1.0/debug' + (_ojNeedsES5 ? '_es5' : ''),
+        'ojL10n': 'libs/oj/v8.1.0/ojL10n',
+        'ojtranslations': 'libs/oj/v8.1.0/resources',
         'text': 'libs/require/text',
         'signals': 'libs/js-signals/signals',
         'customElements': 'libs/webcomponents/custom-elements.min',
@@ -25,7 +35,6 @@
         'css': 'libs/require-css/css.min',
         'touchr': 'libs/touchr/touchr',
         'corejs' : 'libs/corejs/shim',
-        'chai': 'libs/chai/chai-4.2.0',
         'regenerator-runtime' : 'libs/regenerator-runtime/runtime'
       }
       // endinjector

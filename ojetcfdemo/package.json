@@ -2,16 +2,16 @@
   "name": "ojetcfdemo",
   "version": "1.0.0",
   "description": "An Oracle JavaScript Extension Toolkit(JET) web app",
-  "dependencies": {
-    "@oracle/oraclejet": "^11.1.0",
-    "@oracle/oraclejet-tooling": "^11.1.0"
-  },
   "devDependencies": {
-    "qunit": "^2.17.2",
+    "qunit": "^2.19.1",
     "qunit-reporter-junit": "^1.1.1"
   },
   "engines": {
     "node": ">=0.10.0"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@oracle/oraclejet": "~13.1.0",
+    "@oracle/oraclejet-tooling": "~13.1.0"
+  }
 }
